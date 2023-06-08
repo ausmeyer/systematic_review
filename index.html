@@ -542,17 +542,17 @@ class: middle, center
 
 &lt;table&gt;
 &lt;tr&gt;&lt;th align="left"&gt;&lt;/th&gt;&lt;th align="right"&gt;Disease&lt;/th&gt;&lt;th align="right"&gt;No Disease&lt;/th&gt;&lt;th align="right"&gt;Total&lt;/th&gt;&lt;/tr&gt;
-&lt;tr&gt;&lt;td align="left"&gt;Exposed&lt;/td&gt;&lt;td align="right"&gt;20&lt;/td&gt;&lt;td align="right"&gt;80&lt;/td&gt;&lt;td align="right"&gt;100&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td align="left"&gt;Exposed&lt;/td&gt;&lt;td align="right"&gt;33&lt;/td&gt;&lt;td align="right"&gt;67&lt;/td&gt;&lt;td align="right"&gt;100&lt;/td&gt;&lt;/tr&gt;
 &lt;tr&gt;&lt;td align="left"&gt;Not Exposed&lt;/td&gt;&lt;td align="right"&gt;27&lt;/td&gt;&lt;td align="right"&gt;73&lt;/td&gt;&lt;td align="right"&gt;100&lt;/td&gt;&lt;/tr&gt;
-&lt;tr&gt;&lt;td align="left"&gt;Total&lt;/td&gt;&lt;td align="right"&gt;47&lt;/td&gt;&lt;td align="right"&gt;153&lt;/td&gt;&lt;td align="right"&gt;200&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td align="left"&gt;Total&lt;/td&gt;&lt;td align="right"&gt;60&lt;/td&gt;&lt;td align="right"&gt;140&lt;/td&gt;&lt;td align="right"&gt;200&lt;/td&gt;&lt;/tr&gt;
 &lt;/table&gt;
 
 
 &lt;table&gt;
 &lt;tr&gt;&lt;th align="left"&gt;&lt;/th&gt;&lt;th align="right"&gt;Disease&lt;/th&gt;&lt;th align="right"&gt;No Disease&lt;/th&gt;&lt;th align="right"&gt;Total&lt;/th&gt;&lt;/tr&gt;
 &lt;tr&gt;&lt;td align="left"&gt;Exposed&lt;/td&gt;&lt;td align="right"&gt;36&lt;/td&gt;&lt;td align="right"&gt;64&lt;/td&gt;&lt;td align="right"&gt;100&lt;/td&gt;&lt;/tr&gt;
-&lt;tr&gt;&lt;td align="left"&gt;Not Exposed&lt;/td&gt;&lt;td align="right"&gt;15&lt;/td&gt;&lt;td align="right"&gt;85&lt;/td&gt;&lt;td align="right"&gt;100&lt;/td&gt;&lt;/tr&gt;
-&lt;tr&gt;&lt;td align="left"&gt;Total&lt;/td&gt;&lt;td align="right"&gt;41&lt;/td&gt;&lt;td align="right"&gt;149&lt;/td&gt;&lt;td align="right"&gt;200&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td align="left"&gt;Not Exposed&lt;/td&gt;&lt;td align="right"&gt;19&lt;/td&gt;&lt;td align="right"&gt;81&lt;/td&gt;&lt;td align="right"&gt;100&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td align="left"&gt;Total&lt;/td&gt;&lt;td align="right"&gt;55&lt;/td&gt;&lt;td align="right"&gt;145&lt;/td&gt;&lt;td align="right"&gt;200&lt;/td&gt;&lt;/tr&gt;
 &lt;/table&gt;
 ]
 
@@ -568,20 +568,20 @@ class: middle, center
 .pull-left[
 
 `\(OR_1 = 1.71\)`&lt;br&gt;
-`\(OR_2 = 0.68\)`&lt;br&gt;
+`\(OR_2 = 1.33\)`&lt;br&gt;
 `\(OR_3 = 2.56\)`&lt;br&gt;
-`\(OR_4 = 3.19\)`&lt;br&gt;
+`\(OR_4 = 2.4\)`&lt;br&gt;
 ]
 
 .pull-right[
 
 `\(SE_1 = 0.33\)`&lt;br&gt;
-`\(SE_2 = 0.34\)`&lt;br&gt;
+`\(SE_2 = 0.31\)`&lt;br&gt;
 `\(SE_3 = 0.32\)`&lt;br&gt;
-`\(SE_4 = 0.35\)`&lt;br&gt;
+`\(SE_4 = 0.33\)`&lt;br&gt;
 ]
 
-`\(\begin{equation} \begin{split} CI &amp; = OR \pm t_{crit} * SE \\ &amp; = OR \pm 1.96 * SE \end{split} \end{equation}\)`&lt;br&gt;&lt;br&gt;
+`\(\begin{equation} \begin{split} CI &amp; = e^{ln(OR) \pm t_{crit} * SE} \\ &amp; = e^{ln(OR) \pm 1.96 * SE} \end{split} \end{equation}\)`&lt;br&gt;&lt;br&gt;
 `\(t_{crit} = 1.96\)` for 95% CI
 
 ---
@@ -598,7 +598,7 @@ class: middle
 
 # A slide on heterogeneity
 
-&gt; "The quantity, which we call I2, describes the percentage of total variation across studies that is due to heterogeneity rather than chance. I2 can be readily calculated from basic results obtained from a typical meta-analysis as `\(I2 = 100%×(Q - df)/Q\)`, where Q is Cochran's heterogeneity statistic and df the degrees of freedom. Negative values of I2 are put equal to zero so that I2 lies between 0% and 100%."
+&gt; "The quantity, which we call I2, describes the percentage of total variation across studies that is due to heterogeneity rather than chance. I2 can be readily calculated from basic results obtained from a typical meta-analysis... where Q is Cochran's heterogeneity statistic and df the degrees of freedom. Negative values of I2 are put equal to zero so that I2 lies between 0% and 100%."
 
 - Generally people break heterogeneity like this:
   - Low Heterogeneity: &lt;25%
