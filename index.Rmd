@@ -586,9 +586,9 @@ cat('
 cat('
 <table>
 <tr><th align="left"></th><th align="right">Disease</th><th align="right">No Disease</th><th align="right">Total</th></tr>
-<tr><td align="left">Exposed</td><td align="right">47</td><td align="right">53</td><td align="right">100</td></tr>
+<tr><td align="left">Exposed</td><td align="right">39</td><td align="right">61</td><td align="right">100</td></tr>
 <tr><td align="left">Not Exposed</td><td align="right">20</td><td align="right">80</td><td align="right">100</td></tr>
-<tr><td align="left">Total</td><td align="right">67</td><td align="right">133</td><td align="right">200</td></tr>
+<tr><td align="left">Total</td><td align="right">59</td><td align="right">141</td><td align="right">200</td></tr>
 </table>
 ')
 ```
@@ -624,15 +624,15 @@ class: middle, center
 
 # Calculate odds ratios and standard error
 
-$OR = \frac{A + D}{B + C}$<br>
+$OR = \frac{A * D}{B * C}$<br>
 $SE = sqrt(\frac{1}{A} + \frac{1}{B} + \frac{1}{C} + \frac{1}{D})$<br><br>
 
 .pull-left[
 ```{r}
-OR.1 <- (30 + 80) / (20 + 70)
-OR.2 <- (20 + 73) / (27 + 80)
-OR.3 <- (47 + 80) / (20 + 53)
-OR.4 <- (36 + 85) / (15 + 64)
+OR.1 <- (30 * 80) / (20 * 70)
+OR.2 <- (20 * 73) / (27 * 80)
+OR.3 <- (39 * 80) / (20 * 61)
+OR.4 <- (36 * 85) / (15 * 64)
 ```
 $OR_1 = `r round(OR.1, 2)`$<br>
 $OR_2 = `r round(OR.2, 2)`$<br>
@@ -644,7 +644,7 @@ $OR_4 = `r round(OR.4, 2)`$<br>
 ```{r}
 se.1 <- sqrt(1/30 + 1/80 + 1/20 + 1/70)
 se.2 <- sqrt(1/20 + 1/73 + 1/27 + 1/80)
-se.3 <- sqrt(1/47 + 1/80 + 1/20 + 1/53)
+se.3 <- sqrt(1/39 + 1/80 + 1/20 + 1/61)
 se.4 <- sqrt(1/36 + 1/85 + 1/15 + 1/64)
 ```
 $SE_1 = `r round(se.1, 2)`$<br>
@@ -746,11 +746,11 @@ forest_plot <- ggplot(df_combined, aes(x=estimate, y=study)) +
   ylab("Study") +
   theme_minimal() +
   annotate("text", x = max(df_combined$estimate) + 0.05, 
-           y = "pooled", 
+           y = "Pooled", 
            label = paste0("Pooled: ", round(combined_estimate, 2), 
                           " (", round(combined_ci_lower, 2), "-", 
                           round(combined_ci_upper, 2), ")"), 
-           hjust = 0)
+           hjust = 0.5)
 
 print(forest_plot)
 ```
